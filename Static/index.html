@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Quora Blog App</title>
+</head>
+<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+<style type="text/css">
+.in {
+    margin-bottom: 8px;
+}
+</style>
+<template id="welcome_template">
+    <div class="background">
+    <div class="container">
+        <!-- <div class="row">
+            <header style="margin: 0 auto; width: 100%; height: 40px; background-color: #fefefe; border-bottom: 1px solid grey;">
+                <h4 style="font-family: sans-serif; text-align: center; padding: 5px; font-weight: 400;">Welcome To <span style="color: #bd2130; font-size: 26px; font-weight: bold;">Quora Blog App</span></h4>
+            </header>
+        </div> -->
+        
+        <div class="row">
+            <div class="col-md col-lg">
+                <div class="card" style="width: 18rem; border: 2px solid grey; padding: 10px; border-radius: 10px; margin: 30px auto;">
+                    <div class="card-body">
+                        <form onsubmit="javascript: signin(event)">
+                            <div class="form-group">
+                                <input type="email" class="form-control in" name="email" placeholder="email" />
+                                <input type="password" class="form-control in" name="password" placeholder="password" />
+                                <button type="submit" class="btn btn-danger btn-block" value="submit">Sign In</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md col-lg">
+                <div class="card" style="width: 18rem; border: 2px solid grey; padding: 10px; border-radius: 10px; margin: 0 auto;">
+                    <div class="card-body">
+                        <form onsubmit="javascript: signup(event)">
+                            <div class="form-group">
+                                <input type="text" name="name" class="form-control in" placeholder="name" />
+                                <input type="email" class="form-control in" name="email" placeholder="email" />
+                                <input type="password" class="form-control in" name="password" placeholder="password" />
+                                <button type="submit" class="btn btn-danger btn-block" name="submit">Sign Up</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</template>
+<template id="home_template">
+    <div class="container">
+        <div class="row">
+            <header style="margin: 0 auto; width: 100%; height: 40px; background-color: #fefefe; border-bottom: 1px solid grey;">
+                <h4 style="font-family: sans-serif; text-align: center; padding: 5px; font-weight: 400;">Welcome To <span style="color: #bd2130; font-size: 26px; font-weight: bold;">Quora Home</span></h4>
+            </header>
+        </div>
+        <div class="row">
+            <div class="col-md">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" style="margin-top: 10px;">
+                    Create A New Question
+                </button>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Create New Question</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form onsubmit="javascript: createQuestion(event);">
+                                    <input type="text" class="form-control in" name="title" placeholder="Enter title">
+                                    <button name="submit" class="btn btn-danger" type="submit">Create Question</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md">
+                <!-- <div id="questions"> -->
+                    <div class="card" style="margin-top: 15px;">
+                        <div class="card-header">
+                            Questions
+                        </div>
+                        <div class="card-body">
+                            <a><p class="card-text"><B>Ques: </B> Debate on who is the best footballer in world right now</p></a>
+                            <a><p class="card-text"><B>Ques: </B> With supporting text below as a natural lead-in to additional content.</p></a>
+                        </div>
+                    </div>
+               <!--  </div> -->
+            </div>
+        </div>
+    </div>
+</template>
+<template id="question_template">
+    <div class="container">
+        <div class="row">
+            <header style="margin: 0 auto; width: 100%; height: 40px; background-color: #fefefe; border-bottom: 1px solid grey;">
+                <h4 style="font-family: sans-serif; text-align: center; padding: 5px; font-weight: 400;"><span style="color: #bd2130; font-size: 26px; font-weight: bold;">Answer's Page</span></h4>
+            </header>
+        </div>
+        <div class="row">
+            <div class="col-md">
+                <a class="btn btn-danger" style="margin-top: 5px; color: white;" src="localhost:3000">
+                    << Back</a> <div class="question_box">
+                        <h4><span>Query: </span>Debate on who is the best footballer in world right now</h4>
+                        <form>
+                            <div class="form-group">
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Enter Your Answer..."></textarea>
+                                <div class="text-right">
+                                    <button class="btn btn-danger btn-right" style="margin-top: 8px" name="submit" type="submit">Submit Answer</button>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="row">
+                            <!-- <div class="col-md-1">
+                        </div>
+                        <div class="col-md-11">
+                            <p>This debate is probably never get over but there is a man who everyone talks about as best now-a-days. Yes you are right, he is none other than 7 times balon dor <B>Dhruv Sharma</B>. </p>
+                        </div> -->
+                            <div class="media">
+                                <img class="align-self-end mr-3" src="/assets/images/dummy_pic.jpg" alt="Generic placeholder image">
+                                <div class="media-body">
+                                    <h5 class="mt-0"><B>Dhruv Sharma</B></h5>
+                                    <p>This debate is probably never get over but there is a man who everyone talks about as best now-a-days. Yes you are right, he is none other than 7 times balon dor <B>Dhruv Sharma</B></p>
+                                </div>
+                            </div>
+                            <div class="media">
+                                <img class="align-self-end mr-3" src="/assets/images/dummy_pic.jpg" alt="Generic placeholder image">
+                                <div class="media-body">
+                                    <h5 class="mt-0"><B>Love Saroha</B></h5>
+                                    <p>As my friend here written nonsense above, he is totally wrong as we all know. There are many great players in this world right. </p>
+                                </div>
+                            </div>
+                        </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<body>
+    <div id="view"></div> <!-- View Various Templates Here -->
+    <script type="text/javascript" src="/assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/assets/js/lsApp.js"></script>
+    <script type="text/javascript" src="/assets/js/script.js"></script>
+    <script type="text/javascript" src="/assets/js/users.js"></script>
+    <script type="text/javascript" src="/assets/js/questions.js"></script>
+</body>
+
+</html>
