@@ -6,6 +6,7 @@
 </head>
 <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 <style type="text/css">
 .in {
     margin-bottom: 8px;
@@ -13,55 +14,83 @@
 </style>
 <template id="welcome_template">
     <div class="background">
-    <div class="container">
-        <!-- <div class="row">
+        <div class="container">
+            <!-- <div class="row">
             <header style="margin: 0 auto; width: 100%; height: 40px; background-color: #fefefe; border-bottom: 1px solid grey;">
                 <h4 style="font-family: sans-serif; text-align: center; padding: 5px; font-weight: 400;">Welcome To <span style="color: #bd2130; font-size: 26px; font-weight: bold;">Quora Blog App</span></h4>
             </header>
         </div> -->
-        
-        <div class="row">
-            <div class="col-md col-lg">
-                <div class="card" style="width: 18rem; border: 2px solid grey; padding: 10px; border-radius: 10px; margin: 30px auto;">
-                    <div class="card-body">
-                        <form onsubmit="javascript: signin(event)">
-                            <div class="form-group">
-                                <input type="email" class="form-control in" name="email" placeholder="email" />
-                                <input type="password" class="form-control in" name="password" placeholder="password" />
-                                <button type="submit" class="btn btn-danger btn-block" value="submit">Sign In</button>
-                            </div>
-                        </form>
+            <div class="row">
+                <div class="col-md col-lg">
+                    <div class="card" style="width: 18rem; border: 2px solid grey; padding: 10px; border-radius: 10px; margin: 30px auto;">
+                        <div class="card-body">
+                            <form onsubmit="javascript: signin(event)">
+                                <div class="form-group">
+                                    <input type="email" class="form-control in" name="email" placeholder="email" />
+                                    <input type="password" class="form-control in" name="password" placeholder="password" />
+                                    <button type="submit" class="btn btn-danger btn-block" value="submit">Sign In</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md col-lg">
+                    <div class="card" style="width: 18rem; border: 2px solid grey; padding: 10px; border-radius: 10px; margin: 0 auto;">
+                        <div class="card-body">
+                            <form onsubmit="javascript: signup(event)">
+                                <div class="form-group">
+                                    <input type="text" name="name" class="form-control in" placeholder="name" />
+                                    <input type="email" class="form-control in" name="email" placeholder="email" />
+                                    <input type="password" class="form-control in" name="password" placeholder="password" />
+                                    <button type="submit" class="btn btn-danger btn-block" name="submit">Sign Up</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md col-lg">
-                <div class="card" style="width: 18rem; border: 2px solid grey; padding: 10px; border-radius: 10px; margin: 0 auto;">
-                    <div class="card-body">
-                        <form onsubmit="javascript: signup(event)">
-                            <div class="form-group">
-                                <input type="text" name="name" class="form-control in" placeholder="name" />
-                                <input type="email" class="form-control in" name="email" placeholder="email" />
-                                <input type="password" class="form-control in" name="password" placeholder="password" />
-                                <button type="submit" class="btn btn-danger btn-block" name="submit">Sign Up</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-
     </div>
-</div>
 </template>
 <template id="home_template">
     <div class="container">
-        <div class="row">
+        <!-- <div class="row">
             <header style="margin: 0 auto; width: 100%; height: 40px; background-color: #fefefe; border-bottom: 1px solid grey;">
                 <h4 style="font-family: sans-serif; text-align: center; padding: 5px; font-weight: 400;">Welcome To <span style="color: #bd2130; font-size: 26px; font-weight: bold;">Quora Home</span></h4>
             </header>
-        </div>
+        </div> -->
+        <!-- ****************** Navbar Starts ****************-->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+                <a class="navbar-brand" href="#">Blog App</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                More
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Profile</a>
+                                <a class="dropdown-item" href="#">Settings</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Logout</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </div>
+            </nav>
+            <!-- ******************* Navbar Ends **************** -->
         <div class="row">
             <div class="col-md">
                 <!-- Button trigger modal -->
@@ -91,33 +120,68 @@
         </div>
         <div class="row">
             <div class="col-md">
-                <!-- <div id="questions"> -->
-                    <div class="card" style="margin-top: 15px;">
-                        <div class="card-header">
-                            Questions
-                        </div>
-                        <div class="card-body">
-                            <a><p class="card-text"><B>Ques: </B> Debate on who is the best footballer in world right now</p></a>
-                            <a><p class="card-text"><B>Ques: </B> With supporting text below as a natural lead-in to additional content.</p></a>
-                        </div>
+                <div class="card" style="margin-top: 15px;">
+                    <div class="card-header">
+                        Questions
                     </div>
-               <!--  </div> -->
+                    <div class="card-body">
+                        <a>
+                            <p class="card-text"><B>Ques: </B> Debate on who is the best footballer in world right now<span> (Added By - Deepak Chopra)</span><span style="float: right;">24th May'2019 / <i class="far fa-comments">(7)</i></span></p>
+                        </a>
+                        <a>
+                            <p class="card-text"><B>Ques: </B> With supporting text below as a natural lead-in to additional content.<span> (Added By - Lionel Messi)</span><span style="float: right;">25th May'2019 / <i class="far fa-comments">(90)</i></span></p>
+                        </a>
+                        <a>
+                            <p id="questions"></p>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </template>
 <template id="question_template">
     <div class="container">
-        <div class="row">
-            <header style="margin: 0 auto; width: 100%; height: 40px; background-color: #fefefe; border-bottom: 1px solid grey;">
+<!--         <div class="row"> -->
+            <!-- <header style="margin: 0 auto; width: 100%; height: 40px; background-color: #fefefe; border-bottom: 1px solid grey;">
                 <h4 style="font-family: sans-serif; text-align: center; padding: 5px; font-weight: 400;"><span style="color: #bd2130; font-size: 26px; font-weight: bold;">Answer's Page</span></h4>
-            </header>
-        </div>
+            </header> -->
+            <!-- ****************** Navbar Starts ****************-->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+                <a class="navbar-brand" href="#">Blog App</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                More
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Profile</a>
+                                <a class="dropdown-item" href="#">Settings</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Logout</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </div>
+            </nav>
+            <!-- ******************* Navbar Ends **************** -->
+        <!-- </div> -->
         <div class="row">
-            <div class="col-md">
-                <a class="btn btn-danger" style="margin-top: 5px; color: white;" src="localhost:3000">
-                    << Back</a> <div class="question_box">
+            <div class="col-md-9">
+                 <div class="question_box">
                         <h4><span>Query: </span>Debate on who is the best footballer in world right now</h4>
+                        <span class="text-muted"><b>Added By</b>: Deepak Chopra on <i>23rd April 2019</i></span>
                         <form>
                             <div class="form-group">
                                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Enter Your Answer..."></textarea>
@@ -132,22 +196,43 @@
                         <div class="col-md-11">
                             <p>This debate is probably never get over but there is a man who everyone talks about as best now-a-days. Yes you are right, he is none other than 7 times balon dor <B>Dhruv Sharma</B>. </p>
                         </div> -->
+                            <h5 style="font-weight: bold; padding-left: 10px; text-decoration: underline; margin: 0 auto;">Answers (2)</h5>
                             <div class="media">
                                 <img class="align-self-end mr-3" src="/assets/images/dummy_pic.jpg" alt="Generic placeholder image">
                                 <div class="media-body">
-                                    <h5 class="mt-0"><B>Dhruv Sharma</B></h5>
+                                    <h5 class="mt-0"><B>Dhruv Sharma</B></h5><span class="text-muted"><i>25/04/2019 May'2019 </i></span>
+                                    <i class="far fa-thumbs-up"> (5)</i> / <i class="far fa-thumbs-down"> (2)</i>
                                     <p>This debate is probably never get over but there is a man who everyone talks about as best now-a-days. Yes you are right, he is none other than 7 times balon dor <B>Dhruv Sharma</B></p>
                                 </div>
                             </div>
                             <div class="media">
                                 <img class="align-self-end mr-3" src="/assets/images/dummy_pic.jpg" alt="Generic placeholder image">
                                 <div class="media-body">
-                                    <h5 class="mt-0"><B>Love Saroha</B></h5>
+                                    <h5 class="mt-0"><B>Love Saroha</B></h5><span class="text-muted"><i>24/04/2019 May'2019</i></span>
+                                    <i class="far fa-thumbs-up"> (7)</i> / <i class="far fa-thumbs-down"> (3)</i>
                                     <p>As my friend here written nonsense above, he is totally wrong as we all know. There are many great players in this world right. </p>
                                 </div>
                             </div>
                         </div>
             </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card" style="margin-top: 15px;">
+                    <div class="card-header">
+                        Related Questions
+                    </div>
+                    <div class="card-body">
+                        <a>
+                            <p class="card-text" style="font-size: 12px;"><B>Ques: </B> Debate on who is the best footballer in world right now<span> (Added By - Deepak Chopra)</span> / <span>24th May'2019 / <i class="far fa-comments">(7)</i></span></p>
+                        </a>
+                        <a>
+                            <p class="card-text" style="font-size: 12px;"><B>Ques: </B> With supporting text below as a natural lead-in to additional content.<span> (Added By - Lionel Messi)</span> / <span>25th May'2019 / <i class="far fa-comments">(90)</i></span></p>
+                        </a>
+                        <a>
+                            <p id="questions"></p>
+                        </a>
+                    </div>
+                </div>
         </div>
     </div>
 </template>

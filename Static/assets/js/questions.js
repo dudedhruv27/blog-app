@@ -21,7 +21,7 @@ function showQuestions() {
 	for (var i = 0; i<questions.length; i++) {
 		let el = document.createElement("div");
 		// making groups a link for going to particular group page -------------
-		el.innerHTML = `<h4 onclick="javascript: window.location = '/#/question/${questions[i]._id}';">${questions[i].name}</h4>`;
+		el.innerHTML = `<h4 onclick="javascript: window.location = '/#/question/${questions[i]._id}';">${questions[i].title}</h4>`;
 		document.getElementById("questions").appendChild(el);
 	}
 }

@@ -4,7 +4,7 @@ const ObjectId = require("mongodb").ObjectId;
 // getting all the questions from DB
 function getQuestions(req, res){
 	let email = req.params.email;
-	req.Db.collection('questions').find({members: email}).toArray()
+	req.Db.collection('questions').find({addedBy: email}).toArray()
 		.then(function(result){
 			if(result == null){
 				res.status(501).send("No result");
@@ -24,7 +24,7 @@ function createQuestions(req, res){
 			if(result == null){
 				res.status(501).send("No result");
 			}
-			res.status(200).send(newGroup);
+			res.status(200).send(newQuestion);
 		}).catch(function(err){
 			res.status(500).send("Not found");
 		});
